@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<mat-paginator [length]="albums?.length" [pageSize]="25" [pageSizeOptions]="[25,50, 100,1000]" (page)="OnPageChange($event)" aria-label="Select page"></mat-paginator>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Album</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr class="albumLinks" *ngFor="let album of albumsToShow" [routerLink]="['/albums',album.id]">
+            <th scope="row">{{album.id}}</th>
+            <td>{{album.title | uppercase}}</td>
+        </tr>
+
+    </tbody>
+</table>

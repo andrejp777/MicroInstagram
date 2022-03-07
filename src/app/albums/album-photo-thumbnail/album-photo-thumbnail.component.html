@@ -1,0 +1,8 @@
+<a [routerLink]="['/albums',photoCard?.albumId,'photos',photoCard?.id]">
+    <div class="card" style="width: 18rem;">
+        <img [src]="photoCard?.thumbnailUrl" class="card-img-top">
+        <div class="card-body">
+            <h3 class="card-title"> <b>{{title | uppercase}}</b> </h3>
+        </div>
+    </div>
+</a>

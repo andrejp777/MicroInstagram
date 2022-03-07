@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/welcome']"><img src="../assets\camera-logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> MicroInstagram
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link " [routerLink]="['/photos']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Photos</a>
+                </li>
+                <li class=" nav-item ">
+                    <a class="nav-link " [routerLink]="[ '/albums'] " routerLinkActive="active " [routerLinkActiveOptions]="{exact: true}">Albums</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " [routerLink]="[ '/photos/add'] " routerLinkActive="active ">Add Photo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

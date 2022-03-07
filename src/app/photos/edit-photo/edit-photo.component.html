@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<mat-card class="example-card">
+    <form (ngSubmit)="save(addPhotoForm)" #addPhotoForm="ngForm">
+        <mat-card-header>
+            <mat-card-title>
+                <h1><b>EDIT PHOTO</b></h1>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+            <div class="mb-3">
+                <label for="title" class="form-label"><h2>Name</h2></label>
+                <input type="text" class="form-control" id="title" required minlength="5" placeholder="Name of the photo" [(ngModel)]=photo.title name="title" #titleVar="ngModel" [ngClass]="{'is-invalid': (titleVar.touched || titleVar.dirty) && !titleVar.valid }" />
+
+                <span class="invalid-feedback">
+                  <span *ngIf="titleVar.errors?.['required']">
+                    Please enter the title of the photo.
+                  </span>
+                <span *ngIf="titleVar.errors?.['minlength']">
+                    The title must be longer than 5 characters.
+                  </span>
+                </span>
+            </div>
+            <div class="mb-3">
+                <label for="url" class="form-label"><h2>URL of photo</h2></label>
+                <input type="text" class="form-control" id="url" required placeholder="Ex. https://picture.example" [(ngModel)]=photo.url name="url" #urlVar="ngModel" [ngClass]="{'is-invalid': (urlVar.touched || urlVar.dirty) && !urlVar.valid }" />
+                <span class="invalid-feedback">
+                  <span *ngIf="urlVar.errors?.['required']">
+                    Please enter the title of the photo.
+                  </span>
+                </span>
+            </div>
+            <div class="mb-3">
+                <label for="thumbnailUrl" class="form-label"><h2>URL of thumbnail</h2></label>
+                <input type="text" class="form-control" id="thumbnailUrl" required placeholder="Ex. https://thumbnail.example" [(ngModel)]=photo.thumbnailUrl name="thumbnailUrl" #thumbnailUrlVar="ngModel" [ngClass]="{'is-invalid': (thumbnailUrlVar.touched || thumbnailUrlVar.dirty) && !thumbnailUrlVar.valid }"
+                />
+                <span class="invalid-feedback">
+                  <span *ngIf="thumbnailUrlVar.errors?.['required']">
+                    Please enterthe URL for the thumbnail of the photo.
+                  </span>
+                </span>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="albumSelect">Album</label>
+                <select class="form-select" id="albumSelect" required [(ngModel)]=photo.albumId name="albumId" #albumVar="ngModel" [ngClass]="{'is-invalid': !albumVar.valid }">
+                  <option disabled value="">Choose an album</option>
+                  <option *ngFor="let album of albums" [ngValue]="album.id">{{album.title|uppercase}}</option>
+                 </select>
+                <span *ngIf="albumVar.errors?.['required']">
+                  Please select an album for the photo.
+                </span>
+            </div>
+
+            <mat-card-actions>
+                <button mat-raised-button color="accent" type="submit" [title]="addPhotoForm.valid? 'Save your entered data' : 'Disabled until the form data is valid'" [disabled]="!addPhotoForm.valid">SAVE</button>
+                <button mat-raised-button color="" type="button">CANCEL</button>
+                <button mat-raised-button color="warn" type="button">CANCEL</button>
+            </mat-card-actions>
+
+        </mat-card-content>
+    </form>
+</mat-card>
+<br>Dirty: {{ addPhotoForm.dirty }}
+<br>Touched: {{ addPhotoForm.touched }}
+<br>Valid: {{ addPhotoForm.valid }}
+<br>Value: {{ addPhotoForm.value | json }}

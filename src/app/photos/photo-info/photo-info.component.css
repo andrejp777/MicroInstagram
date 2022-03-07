@@ -1,0 +1,29 @@
+mat-card {
+    justify-content: center;
+    width: 75%;
+    height: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+img {
+    width: 95%;
+    height: 75%;
+}
+
+mat-card-header {
+    justify-content: center;
+}
+
+a {
+    margin: 50px;
+}
+
+@media(max-width:550px) {
+    mat-card {
+        height: 70%;
+    }
+    img {
+        height: 50%;
+    }
+}

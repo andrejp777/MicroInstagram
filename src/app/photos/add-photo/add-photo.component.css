@@ -1,0 +1,15 @@
+mat-card {
+    justify-content: left;
+    width: 75%;
+    height: auto;
+    margin: auto;
+}
+
+mat-card-header {
+    justify-content: center;
+}
+
+mat-card-actios {
+    justify-content: center;
+    text-align: center;
+}

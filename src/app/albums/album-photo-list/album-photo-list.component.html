@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<mat-paginator [length]="photos?.length" [pageSize]="16" [pageSizeOptions]="[8,16, 24,48, 100,1000]" (page)="OnPageChange($event)" aria-label="Select page">
+</mat-paginator>
+<mat-grid-list [cols]="breakpoint" rowHeight="8:11" (window:resize)="onResize($event)">
+    <mat-grid-tile class="cardPhoto" *ngFor="let p of photosToShow">
+        <app-album-photo-thumbnail [photoCard]="p"></app-album-photo-thumbnail>
+    </mat-grid-tile>
+</mat-grid-list>
+<div class="albumName">
+    <b>Album: {{albumName | uppercase}}</b>
+</div>

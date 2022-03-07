@@ -1,0 +1,51 @@
+div {
+    position: absolute;
+    top: 7.5%;
+    left: 1%;
+}
+
+.albumName {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+mat-paginator {
+    background-color: rgb(201, 199, 199);
+}
+
+.cardPhoto {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    width: 25%;
+}
+
+@media(max-width:1100px) {
+    .albumName {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:953px) {
+    .albumName {
+        font-size: 12px;
+    }
+}
+
+@media(max-width:730px) {
+    .cardPhoto {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    div {
+        top: 12%;
+    }
+}
+
+@media(max-width:412px) {
+    div {
+        top: 15%;
+    }
+    max-paginator {
+        font-size: 10px;
+    }
+}

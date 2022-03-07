@@ -1,0 +1,9 @@
+.cardPhoto {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    width: 25%;
+}
+
+mat-paginator {
+    background-color: rgb(201, 199, 199);
+}
